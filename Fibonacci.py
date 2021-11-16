@@ -3,7 +3,13 @@ if(Seq == 1):
     Fib = 1
     print(Fib)
 else:
-    Fib = 0
-    for n in range(Seq,0,-1):
-        Fib += n
-print(f'Fibonacci of {Seq} is {Fib}')
+    li = []
+# 0,1,2,3,5,8,13
+    curr = 1
+    li.append(1)
+    li.append(1)
+    for i in range(0,Seq):
+        val = li[i] + li[i+1]
+        li.append(val)
+        print(val, end=" ")
+print()
