@@ -14,4 +14,3 @@ def fib(Seq):
             li.append(val)
             print(val, end=" ")
         print()
-fib(9)
