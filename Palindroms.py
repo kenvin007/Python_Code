@@ -1,20 +1,21 @@
-word = input("Enter a word ")
-ori = []
-for w in word:
-    ori.append(w)
-oriTmp = ori[::-1]
-l = len(ori)
-l = l - 1
-pal = False
-while  -1 < l:
-    oT = oriTmp.pop()
-    if(ori[l] != oT):
-        pal = False
-        break
+#word = input("Enter a word ")
+def is_palin(word):
+    ori = []
+    for w in word:
+        ori.append(w)
+        oriTmp = ori[::-1]
+    l = len(ori)
+    l = l - 1
+    pal = False
+    while  -1 < l:
+        oT = oriTmp.pop()
+        if(ori[l] != oT):
+            pal = False
+            break
+        else:
+            pal = True
+            l -= 1
+    if(pal):
+        print(f'{word} is a palindromes')
     else:
-        pal = True
-    l -= 1
-if(pal):
-    print(f'{word} is a palindromes')
-else:
-    print(f'{word} is not a palindromes')
+        print(f'{word} is not a palindromes')
