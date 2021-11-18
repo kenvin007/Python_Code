@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'python --version'
+                sh '/usr/local/bin/python3 --version'
             }
         }
     }
