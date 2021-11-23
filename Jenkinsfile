@@ -3,6 +3,8 @@ pipeline {
     parameters {
         choice(name: 'all_choices',
         choices:'a\nb\n')
+        string(name: 'enter path',
+        defaultValue: 'somedefault path')
     }
     stages {
         stage('build') {
