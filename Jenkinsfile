@@ -9,13 +9,13 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sleep 10
+                sleep 1
                 sh '/usr/local/bin/python3 --version'
             }
         }
         stage('test') {
             steps {
-                sleep 10
+                sleep 1
             }
         }
     }
