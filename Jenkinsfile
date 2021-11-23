@@ -15,5 +15,6 @@ pipeline {
             steps {
                 sleep 10
             }
+        }
     }
 }
