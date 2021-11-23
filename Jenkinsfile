@@ -20,10 +20,6 @@ pipeline {
                 stage('test') {
                     steps {
                         sleep 1
-                    }
-                }
-                stage('Test python') {
-                    steps {
                         sh '/usr/local/bin/python3 testP.py'
                     }
                 }
