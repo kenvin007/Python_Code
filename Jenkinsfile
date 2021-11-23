@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sleep 1
+                echo "hello ${paras.all_choices}"
                 sh '/usr/local/bin/python3 --version'
             }
         }
