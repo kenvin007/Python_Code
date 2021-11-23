@@ -8,8 +8,8 @@ pipeline {
         string(name: 'branch',
         defaultValue: 'main')
     }
-    parallel {
-        stages {
+    stage('Parallel jobs')
+        parallel {
             stage('build') {
                 steps {
                     echo "hello ${params.all_choices}"
