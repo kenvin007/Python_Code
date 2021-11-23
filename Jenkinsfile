@@ -3,7 +3,7 @@ pipeline {
     parameters {
         choice(name: 'all_choices',
         choices:'a\nb\n')
-        textarea(name: 'enter path',
+        text(name: 'enter path',
         defaultValue: 'somedefault path')
         string(name: 'branch',
         defaultValue: 'main')
