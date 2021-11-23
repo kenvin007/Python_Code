@@ -5,6 +5,8 @@ pipeline {
         choices:'a\nb\n')
         text(name: 'enter path',
         defaultValue: 'somedefault path')
+        string(name: 'branch',
+        defaultValue: 'main')
     }
     stages {
         stage('build') {
