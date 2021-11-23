@@ -8,17 +8,19 @@ pipeline {
         string(name: 'branch',
         defaultValue: 'main')
     }
-    stage('Parallel jobs') {
-        parallel {
-            stage('build') {
-                steps {
-                    echo "hello ${params.all_choices}"
-                    sh '/usr/local/bin/python3 --version'
+    stages {
+        stage('Parallel jobs') {
+            parallel {
+                stage('build') {
+                    steps {
+                        echo "hello ${params.all_choices}"
+                        sh '/usr/local/bin/python3 --version'
+                    }
                 }
-            }
-            stage('test') {
-                steps {
-                    sleep 1
+                stage('test') {
+                    steps {
+                        sleep 1
+                    }
                 }
             }
         }
