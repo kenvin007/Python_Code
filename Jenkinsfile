@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        choic(name: 'choices',
+        choice(name: 'all_choices',
         choices:'a\nb\n')
     }
     stages {
