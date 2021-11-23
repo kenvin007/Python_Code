@@ -3,7 +3,7 @@ pipeline {
     parameters {
         choice(name: 'all_choices',
         choices:'a\nb\n')
-        string(name: 'enter path',
+        text(name: 'enter path',
         defaultValue: 'somedefault path')
     }
     stages {
