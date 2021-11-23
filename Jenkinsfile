@@ -22,6 +22,11 @@ pipeline {
                         sleep 1
                     }
                 }
+                stage('Test python') {
+                    steps {
+                        /usr/local/bin/python3 testP.py
+                    }
+                }
             }
         }
     }
