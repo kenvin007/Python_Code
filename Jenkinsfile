@@ -8,7 +8,7 @@ pipeline {
         string(name: 'branch',
         defaultValue: 'main')
     }
-    stage('Parallel jobs')
+    stage('Parallel jobs') {
         parallel {
             stage('build') {
                 steps {
