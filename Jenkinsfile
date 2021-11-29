@@ -14,13 +14,13 @@ pipeline {
                 stage('build') {
                     steps {
                         echo "hello ${params.all_choices}"
-                        sh '/usr/local/bin/python3 --version'
+                        sh '/usr/bin/python3 --version'
                     }
                 }
                 stage('test') {
                     steps {
                         sleep 1
-                        sh '/usr/local/bin/python3 testP.py'
+                        sh '/usr/bin/python3 testP.py'
                     }
                 }
             }
