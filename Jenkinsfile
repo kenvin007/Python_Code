@@ -31,8 +31,25 @@ pipeline {
             }
         }
         stage('Full regression') {
-            steps {
-                echo "Regression suite ${params.branch}"
+            parallel {
+                stage('Suite 1') {
+                    steps {
+                        echo "Hello ${params.all_choices}"
+                        sh '/usr/bin/python3 --version'
+                    }
+                }
+                stage('Suite 2') {
+                    steps {
+                        sleep 1
+                        sh '/usr/bin/python3 testP.py'
+                    }
+                }
+                stage('Suite 3') {
+                    steps {
+                        sleep 1
+                        sh '/usr/bin/python3 testP.py'
+                    }
+                }
             }
         }
         stage('Final QA Test') {
