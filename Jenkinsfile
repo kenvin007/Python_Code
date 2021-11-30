@@ -31,4 +31,9 @@ pipeline {
             }
         }
     }
+post {
+    success {
+        echo "The Pipeline success :("
+    }
+  }
 }
