@@ -17,12 +17,17 @@ pipeline {
                         sh '/usr/bin/python3 --version'
                     }
                 }
-                stage('test') {
+                stage('Installation Preparation') {
                     steps {
                         sleep 1
                         sh '/usr/bin/python3 testP.py'
                     }
                 }
+            }
+        }
+        stage('Unit Test') {
+            steps {
+                echo "Deliver ${params.branch}"
             }
         }
         stage('Deliver') {
