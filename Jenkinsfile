@@ -57,7 +57,7 @@ pipeline {
                 echo "QA Test ${params.branch}"
             }
         }
-        stage('Install Test') {
+        stage('Package & Install Test') {
             steps {
                 echo "Installation test ${params.branch}"
             }
