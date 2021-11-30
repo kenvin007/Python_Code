@@ -11,9 +11,9 @@ pipeline {
     stages {
         stage('Parallel jobs') {
             parallel {
-                stage('build') {
+                stage('Build') {
                     steps {
-                        echo "hello ${params.all_choices}"
+                        echo "Hello ${params.all_choices}"
                         sh '/usr/bin/python3 --version'
                     }
                 }
@@ -30,15 +30,30 @@ pipeline {
                 echo "Deliver ${params.branch}"
             }
         }
-        stage('Deliver') {
+        stage('Full regression') {
             steps {
-                echo "Deliver ${params.branch}"
+                echo "Regression suite ${params.branch}"
+            }
+        }
+        stage('Final QA Test') {
+            steps {
+                echo "QA Test ${params.branch}"
+            }
+        }
+        stage('Install Test') {
+            steps {
+                echo "Installation test ${params.branch}"
+            }
+        }
+        stage('Public report') {
+            steps {
+                echo "Public report ${params.branch}"
             }
         }
     }
 post {
     success {
-        echo "The Pipeline success :("
+        echo "The Pipeline success :)"
     }
   }
 }
