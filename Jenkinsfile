@@ -65,6 +65,7 @@ pipeline {
         stage('Public report') {
             steps {
                 echo "Public report ${params.branch}"
+                sh 'mkdir -p /var/lib/jenkins/workspace/Build/coverage'
                 publishHTML target: [
                     allowMissing: false,
                     alwaysLinkToLastBuild: false,
