@@ -65,15 +65,17 @@ pipeline {
         stage('Public report') {
             steps {
                 echo "Public report ${params.branch}"
+                /*
                 sh 'mkdir -p /var/lib/jenkins/workspace/Build/coverage'
                 publishHTML target: [
-                    allowMissing: false,
+                   allowMissing: false,
                     alwaysLinkToLastBuild: false,
                     keepAll: true,
                     reportDir: 'coverage',
                     reportFiles: 'index.html',
                     reportName: 'RCov Report'
                 ]
+                */
             }
         }
     }
