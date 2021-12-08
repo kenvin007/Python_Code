@@ -1,12 +1,12 @@
 pipeline {
     agent any
     parameters {
-        choice(name: 'all_choices',
-        choices:'a\nb\n')
-        text(name: 'enter path',
-        defaultValue: 'somedefault path')
-        string(name: 'branch',
-        defaultValue: 'main')
+        choice(name: 'Branch',
+        choices:'main\nSP_1\SP_2n')
+        text(name: 'Customers',
+        defaultValue: '<Samsung>')
+        string(name: 'Install location',
+        defaultValue: '/usr/packages/')
     }
     stages {
         stage('Parallel jobs') {
