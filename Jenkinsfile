@@ -2,7 +2,7 @@ pipeline {
     agent any
     parameters {
         choice(name: 'Branch',
-        choices:'main\nSP_1\SP_2n')
+        choices:'main\nSP_1\nSP_2\n')
         text(name: 'Customers',
         defaultValue: '<Samsung>')
         string(name: 'Install location',
