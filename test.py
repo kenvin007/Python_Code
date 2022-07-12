@@ -11,7 +11,6 @@ class emp:
     def __init__(self, name, sal):
         self.name = name
         self.sal = sal
-
     @raiseIt
     def printE(self):
         print(f'name {self.name} {self.sal}')
