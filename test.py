@@ -1,3 +1,4 @@
+#Class member function decorator
 def raiseIt(method):
     def inner(name_ref):
         print(f'A: {name_ref.sal} {name_ref.name.upper()}')
