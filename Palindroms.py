@@ -6,7 +6,7 @@ def is_palin(word):
         oriTmp = ori[::-1]
     l = len(ori)
     l = l - 1
-    pal = False
+    pal = True
     while  -1 < l:
         oT = oriTmp.pop()
         if(ori[l] != oT):
