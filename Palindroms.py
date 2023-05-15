@@ -1,5 +1,5 @@
 #word = input("Enter a word ")
-#comment
+#comment else
 def is_palin(word):
     ori = []
     for w in word:
