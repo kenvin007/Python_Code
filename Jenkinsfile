@@ -12,12 +12,15 @@ pipeline {
         stage('Parallel jobs') {
             parallel {
                 stage('Build') {
+                    agent { label "runner1" }
                     steps {
                         echo "Hello ${params.all_choices}"
                         sh '/usr/bin/python3 --version'
+                        sh 'hostname'
                     }
                 }
                 stage('Installation Preparation') {
+                    agent { label "runner2" }
                     steps {
                         sleep 1
                         sh '/usr/bin/python3 testP.py'
@@ -33,12 +36,14 @@ pipeline {
         stage('Full regression') {
             parallel {
                 stage('Suite 1') {
+                    agent { label "runner1" }
                     steps {
                         echo "Hello ${params.all_choices}"
                         sh '/usr/bin/python3 --version'
                     }
                 }
                 stage('Suite 2') {
+                    agent { label "runner2" }
                     steps {
                         sleep 1
                         sh '/usr/bin/python3 testP.py'
