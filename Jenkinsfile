@@ -24,6 +24,7 @@ pipeline {
                     steps {
                         sleep 1
                         sh '/usr/bin/python3 testP.py'
+                        sh 'hostname'
                     }
                 }
             }
@@ -40,6 +41,7 @@ pipeline {
                     steps {
                         echo "Hello ${params.all_choices}"
                         sh '/usr/bin/python3 --version'
+                        sh 'hostname'
                     }
                 }
                 stage('Suite 2') {
@@ -47,6 +49,7 @@ pipeline {
                     steps {
                         sleep 1
                         sh '/usr/bin/python3 testP.py'
+                        sh 'hostname'
                     }
                 }
                 stage('Suite 3') {
