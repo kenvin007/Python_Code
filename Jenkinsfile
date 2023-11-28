@@ -32,6 +32,7 @@ pipeline {
                     steps {
                         sleep 1
                         sh './test.pl'
+                        sh 'curl checkip.amazonaws.com'
                     }
                 }
             }
