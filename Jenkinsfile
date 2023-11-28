@@ -27,6 +27,13 @@ pipeline {
                         sh 'hostname'
                     }
                 }
+                stage('Test perl') {
+                    agent { label "runner1" }
+                    steps {
+                        sleep 1
+                        sh './test.pl'
+                    }
+                }
             }
         }
         stage('Unit Test') {
