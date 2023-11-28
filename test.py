@@ -1,5 +1,5 @@
 #Class member function decorator
-#Test1 comment
+#Test2 comment
 def raiseIt(method):
     def inner(name_ref):
         print(f'A: {name_ref.sal} {name_ref.name.upper()}')
