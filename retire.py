@@ -1,5 +1,3 @@
-
-
 from matplotlib import pyplot as plt
 from ast import literal_eval
 import re
