@@ -1,0 +1,9 @@
+initial_SSI=30000
+principal=1000000
+withdraw=100000
+spouse_work_history='y'
+stock_gain_rate=0.10
+cd_gain_rate=0.02
+stock_distribution=0.7
+CD_distribution=0.3
+COLA=0.03
