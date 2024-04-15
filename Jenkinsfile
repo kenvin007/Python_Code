@@ -1,5 +1,5 @@
 pipeline {
-    agent { label "runner1" }
+    agent any
     parameters {
         choice(name: 'Branch',
         choices:'main\nSP_1\nSP_2\n')
