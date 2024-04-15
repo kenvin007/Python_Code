@@ -20,7 +20,7 @@ pipeline {
                     }
                 }
                 stage('Installation Preparation') {
-                    agent { label "runner2" }
+                    agent { label "runner1" }
                     steps {
                         sleep 1
                         sh '/usr/bin/python3 testP.py'
@@ -53,7 +53,7 @@ pipeline {
                     }
                 }
                 stage('Suite 2') {
-                    agent { label "runner2" }
+                    agent { label "runner1" }
                     steps {
                         sleep 1
                         sh '/usr/bin/python3 testP.py'
