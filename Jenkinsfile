@@ -14,9 +14,9 @@ pipeline {
                 stage('Build') {
                     agent { label "runner1" }
                     steps {
-                        echo "Hello ${params.all_choices}"
-                        sh '/usr/bin/python3 --version'
-                        sh 'hostname'
+                        echo "Compiling..."
+                        sh 'cmake .'
+                        sh 'make'
                     }
                 }
                 stage('Installation Preparation') {
