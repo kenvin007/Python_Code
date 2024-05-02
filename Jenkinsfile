@@ -45,8 +45,11 @@ pipeline {
                 }
                 }
                 stage('Coverity') {
-                    sh 'hostname'
-                    echo "Run Coverity"
+                    agent { label "runner1" }
+                    steps {
+                        sh 'hostname'
+                        echo "Run Coverity"
+                    }
                 }
             }
         }
