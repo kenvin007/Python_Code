@@ -12,6 +12,10 @@ TEST(Addition, PositiveNos) {
     ASSERT_EQ(16, addition(10,6));
 }
 
+TEST(foo,PositiveNos) {
+    ASSERT_EQ(6, foo(6));
+}
+
 TEST(SquareRootTest, NegativeNos) {
     ASSERT_EQ(-1.0, squareRoot(-15.0));
     ASSERT_EQ(-1.0, squareRoot(-0.2));

@@ -12,3 +12,7 @@ double addition(double a, double b) {
   double total = a + b; 
   return total;
 }
+int foo (int x) {
+  int arr[4] = {1,2,3,4};
+  return arr[5];
+}
