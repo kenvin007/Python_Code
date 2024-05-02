@@ -19,7 +19,8 @@ pipeline {
                         sh 'make'
                     }
                 }
-                stages { 
+                stage ('Coverage') { 
+                stages {
                 stage('Runtest') {
                     agent { label "runner1" }
                     steps {
@@ -40,6 +41,7 @@ pipeline {
                             reportName: 'RCov Report'
                         ]
                     }
+                }
                 }
                 }
             }
