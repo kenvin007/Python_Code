@@ -21,14 +21,14 @@ pipeline {
                 }
                 stage ('Coverage') { 
                 stages {
-                stage('Runtest') {
+                stage('gcov run') {
                     agent { label "runner1" }
                     steps {
                         sh 'hostname'
                         sh './runTests'
                     }
                 }
-                stage('Generate Coverage') {
+                stage('genHTML report') {
                     agent { label "runner1" }
                     steps {
                         sh 'cd CMakeFiles/runTests.dir; lcov --capture --directory . --output-file coverage.info; genhtml coverage.info --output-directory out'
@@ -44,11 +44,15 @@ pipeline {
                 }
                 }
                 }
+                stage('Coverity') {
+                    sh 'hostname'
+                    echo "Run Coverity"
+                }
             }
         }
-        stage('Unit Test') {
+        stage('AdHoc Tests') {
             steps {
-                echo "Deliver ${params.branch}"
+                echo "Run AdHoc"
             }
         }
         stage('Full regression') {
