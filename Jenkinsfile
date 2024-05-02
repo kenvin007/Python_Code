@@ -34,7 +34,7 @@ pipeline {
                             allowMissing: false,
                             alwaysLinkToLastBuild: false,
                             keepAll: true,
-                            reportDir: 'coverage',
+                            reportDir: 'CMakeFiles/runTests.dir/out',
                             reportFiles: 'index.html',
                             reportName: 'RCov Report'
                         ]
