@@ -19,20 +19,17 @@ pipeline {
                         sh 'make'
                     }
                 }
-                stage('Installation Preparation') {
+                stage('Runtest') {
                     agent { label "runner1" }
                     steps {
-                        sleep 1
-                        sh '/usr/bin/python3 testP.py'
                         sh 'hostname'
+                        sh './runTests'
                     }
                 }
-                stage('Test perl') {
+                stage('Generate Coverage') {
                     agent { label "runner1" }
                     steps {
-                        sleep 1
-                        sh './test.pl'
-                        sh 'curl checkip.amazonaws.com'
+                        sh 'cd CMakeFiles/runTests.dir; lcov --capture --directory . --output-file coverage.info; genhtml coverage.info --output-directory out'
                     }
                 }
             }
