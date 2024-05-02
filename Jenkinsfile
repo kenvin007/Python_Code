@@ -44,6 +44,12 @@ pipeline {
                 }
                 }
                 }
+                stage('Valgrind') {
+                    agent { label "runner1" }
+                    steps {
+                        sh 'valgrind --leak-check=yes ./runTests'
+                    }
+                }
                 stage('Coverity') {
                     agent { label "runner1" }
                     steps {
